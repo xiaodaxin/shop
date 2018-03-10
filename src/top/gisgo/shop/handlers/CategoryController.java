@@ -22,7 +22,7 @@ public class CategoryController {
 	ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	CategoryDaoImpl categoryDaoImpl = (CategoryDaoImpl) context.getBean("categoryDaoImpl");
 
-	@RequestMapping("admin/addCategory")
+	@RequestMapping("/addCategory")
 	public String addCategory(@ModelAttribute Category category) {
 
 		boolean boo = categoryDaoImpl.add(category);
@@ -30,7 +30,7 @@ public class CategoryController {
 		return "redirect:success.jsp";
 	}
 
-	@RequestMapping(value = "admin/queryAllCategory", produces = "text/html;charset=UTF-8")
+	@RequestMapping(value = "/queryAllCategory", produces = "text/html;charset=UTF-8")
 	public void queryAllCategory(HttpServletResponse response) throws IOException {
 
 		List<Category> categorys = categoryDaoImpl.queryAll();

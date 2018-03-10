@@ -14,10 +14,7 @@
    </servlet>
    <servlet-mapping>
       <servlet-name>shop</servlet-name>
-      <url-pattern>*.html</url-pattern>
-      <url-pattern>*.js</url-pattern>
-      <url-pattern>*.css</url-pattern>
-      <url-pattern>/</url-pattern>
+      <url-pattern>/api/*</url-pattern>
    </servlet-mapping>
    
 <!-- 字符过滤器 -->  

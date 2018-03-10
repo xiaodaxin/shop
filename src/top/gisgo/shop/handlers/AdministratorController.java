@@ -13,7 +13,7 @@ public class AdministratorController {
 	ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	AdministratorDaoImpl administratorDaoImpl = (AdministratorDaoImpl) context.getBean("administratorDaoImpl");
 
-	@RequestMapping("admin/login")
+	@RequestMapping("/login")
 	public String login(String phone, String password) {
 		System.out.println(administratorDaoImpl.doLogin(phone, password));
 		

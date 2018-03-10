@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import top.gisgo.shop.models.Commodity;
@@ -36,10 +37,15 @@ public class CommodityDaoImpl implements CommodityDao {
 		System.out.println("----------删除商品成功-----------");
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<Commodity> queryCommodityByCategoryId(int categoryId) {
-		// TODO Auto-generated method stub
-		return null;
+
+		String sql="select * from commodity where categoryid="+categoryId;
+		
+		@SuppressWarnings("rawtypes")
+		List<Commodity> lists= jdbcTemplateObject.query(sql,new BeanPropertyRowMapper(Commodity.class));
+		return lists;
 	}
 
 	@Override

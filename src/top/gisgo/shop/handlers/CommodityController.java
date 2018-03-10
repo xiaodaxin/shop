@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,6 +16,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.alibaba.fastjson.JSON;
 
 import top.gisgo.shop.dao.CommodityDaoImpl;
 import top.gisgo.shop.models.Commodity;
@@ -29,7 +33,7 @@ public class CommodityController {
 	 * 增加商品
 	 * 
 	 */
-	@RequestMapping("admin/addCommodity")
+	@RequestMapping("/addCommodity")
 	public String addCommodity(@RequestParam("imgFile") MultipartFile file,HttpServletRequest request,@ModelAttribute Commodity commodity) {
 		
 //      获取源文件的文件名
@@ -53,15 +57,26 @@ public class CommodityController {
         }
         commodity.setImgUrl("http://localhost:8080/imgs/"+imgname);
         commodityDaoImpl.addCommodity(commodity);
-        return "redirect:success.jsp";		
+        return "redirect:../admin/add.html";		
 	}
 	
 	/*
 	 *通过商品ID删除商品 
 	 */
-	@RequestMapping("admin/deleteCommodityById")
+	@RequestMapping("/deleteCommodityById")
 	public void deleteCommodityById(int id) {
 		commodityDaoImpl.deleteCommodityById(id);
+	}
+	
+	
+	@RequestMapping("/queryCommodityByCategoryId")
+	public void queryCommodityByCategoryId(int id,HttpServletResponse response) throws IOException {
+		List<Commodity> commodities=commodityDaoImpl.queryCommodityByCategoryId(id);
+		String json =JSON.toJSONString(commodities);
+		System.out.println(json);
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=UTF-8");
+		response.getWriter().write(json);
 	}
 
 }

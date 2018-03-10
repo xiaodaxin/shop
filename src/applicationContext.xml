@@ -12,7 +12,6 @@
       <property name="username" value="root"/>
       <property name="password" value="147852369"/>
    </bean>
-
    <!-- Definition for studentJDBCTemplate bean -->
    <bean id="administratorDaoImpl" 
       class="top.gisgo.shop.dao.AdministratorDaoImpl">
