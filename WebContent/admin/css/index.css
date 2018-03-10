@@ -1,0 +1,44 @@
+html,body{
+    width: 100%;
+    height: 100%;
+}
+#carousel{
+    height: 40%;
+    width: 100%;
+}
+#carousel div, img{
+    width: 100%;
+    height: 100% !important; 
+}
+
+#function-div{
+    margin-top: 30px;
+}
+
+.grid{
+    height: auto;
+    border-right-style: solid;
+    border-width: 1px;
+    border-color:  rgba(110, 109, 109,0.1);
+    color: rgb(110, 109, 109);
+    padding: 10px;
+}
+.grid:hover{
+    background: rgba(110, 109, 109,0.1);
+}
+.grid .imgdiv{
+    margin:0px auto;
+    font-size: 30px;
+    text-align: center;
+    line-height: 70px;
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+}
+.imgdiv .glyphicon{
+   color: white;
+}
+.function-name{
+    width: 100%;
+    text-align: center;
+}
