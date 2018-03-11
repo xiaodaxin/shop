@@ -25,53 +25,61 @@ import top.gisgo.shop.models.Commodity;
 @Controller
 public class CommodityController {
 	
-	public static final String PATH="F://Program Files/apache-tomcat-9.0.2/webapps/imgs/";
+	// public static final String PATH="F://Program Files/apache-tomcat-9.0.2/webapps/imgs/";
 	ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
 	CommodityDaoImpl commodityDaoImpl = (CommodityDaoImpl) context.getBean("commodityDaoImpl");
 	
 	/*
-	 * 增加商品
+	 * 澧炲姞鍟嗗搧
 	 * 
 	 */
 	@RequestMapping("/addCommodity")
 	public String addCommodity(@RequestParam("imgFile") MultipartFile file,HttpServletRequest request,@ModelAttribute Commodity commodity) {
 		
-//      获取源文件的文件名
+//      鑾峰彇婧愭枃浠剁殑鏂囦欢鍚�
         String fileName = file.getOriginalFilename();
         
-//      获得系统时间作为名字前缀
+//      鑾峰緱绯荤粺鏃堕棿浣滀负鍚嶅瓧鍓嶇紑
         Date day=new Date();    
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");     
         String imgname=df.format(day)+ fileName;
 
-//      创建目标文件，制定文件存储路径和文件名
-        File targetFile = new File(PATH+imgname);
+        String path=request.getSession().getServletContext().getRealPath("/")+"imgs\\" ;
+        System.out.println(path);
+//      鍒涘缓鐩爣鏂囦欢锛屽埗瀹氭枃浠跺瓨鍌ㄨ矾寰勫拰鏂囦欢鍚�
+        File targetFile = new File(path+imgname);
         
         if(fileName!=null&&fileName.length()>0){
             try {
-//              将源文件转移到目标文件，使用transferTo方法
+//              灏嗘簮鏂囦欢杞Щ鍒扮洰鏍囨枃浠讹紝浣跨敤transferTo鏂规硶
                 file.transferTo(targetFile);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-        commodity.setImgUrl("http://localhost:8080/imgs/"+imgname);
+        commodity.setImgUrl("http://localhost:8080/shop/imgs/"+imgname);
         commodityDaoImpl.addCommodity(commodity);
         return "redirect:../admin/add.html";		
 	}
 	
 	/*
-	 *通过商品ID删除商品 
+	 *閫氳繃鍟嗗搧ID鍒犻櫎鍟嗗搧 
 	 */
 	@RequestMapping("/deleteCommodityById")
-	public void deleteCommodityById(int id) {
+	public void deleteCommodityById(int id,HttpServletResponse response) throws IOException {
 		commodityDaoImpl.deleteCommodityById(id);
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=UTF-8");
+		response.getWriter().write("true");
 	}
 	
-	
+	/**
+	 * 
+	 * 通过种类ID查找商品
+	 * **/
 	@RequestMapping("/queryCommodityByCategoryId")
-	public void queryCommodityByCategoryId(int id,HttpServletResponse response) throws IOException {
-		List<Commodity> commodities=commodityDaoImpl.queryCommodityByCategoryId(id);
+	public void queryCommodityByCategoryId(int categoryId,HttpServletResponse response) throws IOException {
+		List<Commodity> commodities=commodityDaoImpl.queryCommodityByCategoryId(categoryId);
 		String json =JSON.toJSONString(commodities);
 		System.out.println(json);
 		response.setCharacterEncoding("utf-8");

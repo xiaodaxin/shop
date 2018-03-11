@@ -26,5 +26,30 @@ $(document).ready(function() {
                 $("#categoryId").append("<option value='"+json[i].id+"'>"+json[i].name+"</option>")
             }
         }});
+    
+    
+    $("#sbt").click(function () {
+        console.log("click");
+        var boo=true;
+        $("input").each(function () {
+            if ($(this).val()=='') {
+                boo=false
+            }
+        })
 
+            if ($("#description").val()=='') {
+                boo=false
+            }
+
+            if($("#categoryId").val()=='') {
+            boo=false
+        }
+
+        if(boo){
+            $("form").submit()
+        }else{
+            alert("请输入完整信息")
+        }
+
+    })
 });

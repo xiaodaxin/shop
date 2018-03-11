@@ -26,7 +26,7 @@ public class CommodityDaoImpl implements CommodityDao {
 		String SQL = "insert into commodity (name, description,imgUrl,money,categoryId) values (?, ?, ?,?,?)";     
 	
 	    jdbcTemplateObject.update(SQL, commodity.getName(),commodity.getDescription(),commodity.getImgUrl(),commodity.getMoney(),commodity.getCategoryId());
-	    System.out.println("添加商品成功："+commodity);
+	    System.out.println("娣诲姞鍟嗗搧鎴愬姛锛�"+commodity);
 	}
 
 	@Override
@@ -34,7 +34,7 @@ public class CommodityDaoImpl implements CommodityDao {
 
 		String sql ="delete from commodity where id="+id;
 		jdbcTemplateObject.update(sql);
-		System.out.println("----------删除商品成功-----------");
+		System.out.println("----------删除成功-----------");
 	}
 
 	@SuppressWarnings("unchecked")
