@@ -33,26 +33,24 @@ public class CategoryDaoImpl implements CategoryDao {
 		String sql="select * from category";
 		SqlRowSet rs=jdbcTemplateObject.queryForRowSet(sql);
 		
-		List<Category> categorys=new ArrayList<>();
-		
+		List<Category> categorys=new ArrayList<>();		
 		while(rs.next()) {
 			
 			Category category=new Category();
 			category.setId(rs.getInt(1));
 			category.setName(rs.getString(2));
-			category.setTitle(rs.getString(3));
+			category.setImgUrl(rs.getString(3));
 			categorys.add(category);
 		}
-		
 		return categorys;
 	}
 
 	@Override
 	public boolean add(Category category) {
 
-		String SQL = "insert into category (name, title) values (?, ?)";     
+		String SQL = "insert into category (name, imgUrl) values (?, ?)";     
 		System.out.println(category.getName());
-		int i=jdbcTemplateObject.update(SQL, category.getName(),category.getTitle());
+		int i=jdbcTemplateObject.update(SQL, category.getName(),category.getImgUrl());
 	    if(i==1) {
 	    	System.out.println("插入成功"+i);
 	    	 return true;

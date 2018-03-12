@@ -9,6 +9,7 @@ html,body{
     height: 50px;
     background: skyblue;
     padding-left: 10px;
+    padding-right: 10px;
 }
 #header #shouye{
     line-height: 50px;
@@ -23,18 +24,17 @@ html,body{
     right: 0;
     height: 50px;
     font-size: 25px;
+    line-height: 50px;
     text-align: center;
+    color: white;
 }
 
-#choice-category{
-    border-radius: 0;
-}
-
-.card-container{
-    width: 100%;
-    height: auto;
-    padding: 0;
-    margin: 0;
+#add-category{
+    float: right;
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
 }
 .card{
     position: relative;
@@ -50,17 +50,4 @@ html,body{
     position: absolute;
     bottom: 15px;
     left: 15px;
-}
-
-.delete{
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    width: 40px;
-    height: 40px;
-    border-radius: 20px;
-    background: rgba(254, 3, 19, 0.5);
-    line-height: 40px;
-    text-align: center;
-    color: white;
 }

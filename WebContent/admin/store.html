@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/store.css">
+    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+    <script src="plugins/jquery-3.2.1.min.js"></script>
+    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <title></title>
+</head>
+
+<body>
+<div id="header">
+    <span id="title">商家信息</span>
+    <a id="shouye" href="index.html">
+        <span class="glyphicon glyphicon-home"></span>
+    </a>
+    <div id="edit">
+        <span  class="glyphicon glyphicon-edit"></span>
+    </div>
+
+</div>
+
+<form id="store" class="form-horizontal" role="form" action="http://localhost:8080/SHOP/api/updateStore">
+    <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">商家名称:</label>
+        <div class="col-sm-10">
+            <input readonly type="text" class="form-control" name="title" id="storetitle" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="phone" class="col-sm-2 control-label">商家电话:</label>
+        <div class="col-sm-10">
+            <input readonly type="text" class="form-control" name="phone" id="phone" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="address" class="col-sm-2 control-label">商家地址:</label>
+        <div class="col-sm-10">
+            <input readonly type="text" class="form-control" name="address" id="address" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="boss" class="col-sm-2 control-label">店主姓名:</label>
+        <div class="col-sm-10">
+            <input readonly type="text" class="form-control" name="boss" id="boss" >
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="description" class="col-sm-2 control-label">商家描述:</label>
+        <div class="col-sm-10">
+            <textarea readonly  class="form-control" name="description" id="description" ></textarea>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-xs-12 col-sm-12">
+            <button style="width: 100%;display: none" id="sbt" type="button" class="btn btn-defaul">提交</button>
+        </div>
+    </div>
+    <div class="form-group">
+    <div id="message" class="col-xs-12 col-sm-12">
+
+    </div>
+    </div>
+</form>
+</body>
+<script src="js/store.js"></script>
+</html>

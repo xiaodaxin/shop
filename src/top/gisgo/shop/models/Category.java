@@ -3,7 +3,7 @@ package top.gisgo.shop.models;
 public class Category {
 	int id;
 	String name;
-	String title;
+	String imgUrl;
 	
 	public int getId() {
 		return id;
@@ -17,12 +17,13 @@ public class Category {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getTitle() {
-		return title;
+	public String getImgUrl() {
+		return imgUrl;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
 	}
+
 	
 	
 

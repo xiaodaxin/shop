@@ -27,9 +27,6 @@ function updateCommodities () {
                                 +'</div>'
                                 +'</div>'
                             $(".container").append(context);
-                            
-                    
-                            
                         }
                     }
                 });
@@ -48,10 +45,7 @@ $(document).ready(function() {
 								"<option value='" + json[i].id + "'>"
 										+ json[i].name + "</option>")
 					}
-
 					updateCommodities();
-					
-					
 				}
 			});
 			/**

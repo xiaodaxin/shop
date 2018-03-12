@@ -27,5 +27,9 @@
       class="top.gisgo.shop.dao.CommodityDaoImpl">
       <property name="dataSource"  ref="dataSource" />    
    </bean>
+   <bean id="storeDaoImpl" 
+      class="top.gisgo.shop.dao.StoreDaoImpl">
+      <property name="dataSource"  ref="dataSource" />    
+   </bean>
 
 </beans>

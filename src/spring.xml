@@ -20,7 +20,7 @@
 	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/admin/" />
+		<property name="prefix" value="/index/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 	

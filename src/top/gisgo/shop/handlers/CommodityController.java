@@ -44,10 +44,13 @@ public class CommodityController {
         SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");     
         String imgname=df.format(day)+ fileName;
 
-        String path=request.getSession().getServletContext().getRealPath("/")+"imgs\\" ;
+        String path=request.getSession().getServletContext().getRealPath("") ;
         System.out.println(path);
 //      鍒涘缓鐩爣鏂囦欢锛屽埗瀹氭枃浠跺瓨鍌ㄨ矾寰勫拰鏂囦欢鍚�
-        File targetFile = new File(path+imgname);
+        
+        String p=new File(path).getParent()+"\\imgs\\commodity\\";
+        System.out.println(p);
+        File targetFile = new File(p+imgname);
         
         if(fileName!=null&&fileName.length()>0){
             try {
@@ -57,7 +60,7 @@ public class CommodityController {
                 e.printStackTrace();
             }
         }
-        commodity.setImgUrl("http://localhost:8080/shop/imgs/"+imgname);
+        commodity.setImgUrl("http://localhost:8080/imgs/commodity/"+imgname);
         commodityDaoImpl.addCommodity(commodity);
         return "redirect:../admin/add.html";		
 	}
