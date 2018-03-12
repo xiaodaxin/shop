@@ -9,6 +9,7 @@ html,body{
 /**导航栏样式**/
 .navbar-style{
     background: rgba(10, 10, 10, 0.4);
+    margin-bottom: 0 !important;
 }
 .navbar-style a{
     background:transparent !important;
@@ -30,6 +31,7 @@ button.navbar-toggle > span.icon-bar {
 
 
 #footer{
+	margin-top:20px;
     padding-top:20px;
     padding-bottom: 20px;
     width: 100%;

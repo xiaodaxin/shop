@@ -5,10 +5,12 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import top.gisgo.shop.models.Category;
+import top.gisgo.shop.models.Store;
 
 public class CategoryDaoImpl implements CategoryDao {
 	
@@ -23,8 +25,19 @@ public class CategoryDaoImpl implements CategoryDao {
 
 	@Override
 	public Category queryById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		String sql="select * from category where id="+id;
+		
+		List<Category>category;
+		try {
+			category = jdbcTemplateObject.query(sql, new BeanPropertyRowMapper<Category>(Category.class));
+			
+		}catch(Exception e) {
+			return null;
+		}
+		System.out.println("分类信息："+category.get(0));
+		return category.get(0);
+	
 	}
 
 	@Override
