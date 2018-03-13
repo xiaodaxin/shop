@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import top.gisgo.shop.models.Category;
-import top.gisgo.shop.models.Store;
 
 public class CategoryDaoImpl implements CategoryDao {
 	
@@ -53,6 +52,7 @@ public class CategoryDaoImpl implements CategoryDao {
 			category.setId(rs.getInt(1));
 			category.setName(rs.getString(2));
 			category.setImgUrl(rs.getString(3));
+			category.setDescription(rs.getString(4));
 			categorys.add(category);
 		}
 		return categorys;
@@ -61,11 +61,11 @@ public class CategoryDaoImpl implements CategoryDao {
 	@Override
 	public boolean add(Category category) {
 
-		String SQL = "insert into category (name, imgUrl) values (?, ?)";     
+		String SQL = "insert into category (name, imgUrl,description) values (?, ?,?)";     
 		System.out.println(category.getName());
-		int i=jdbcTemplateObject.update(SQL, category.getName(),category.getImgUrl());
+		int i=jdbcTemplateObject.update(SQL, category.getName(),category.getImgUrl(),category.getDescription());
 	    if(i==1) {
-	    	System.out.println("插入成功"+i);
+	    	System.out.println("插入分类成功"+category);
 	    	 return true;
 	    }else {
 	    	System.out.println("插入失败");

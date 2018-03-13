@@ -2,7 +2,7 @@
  * 获得商品类别
  */
 $.ajax({
-    url : "http://localhost:8080/SHOP/api/queryAllCategory",
+    url : "../api/queryAllCategory",
     success : function(data) {
         var json = JSON.parse(data);
         for (var i = 0; i < json.length; i++) {

@@ -6,7 +6,7 @@ html,body{
 }
 
 
-/**导航栏样式**/
+/**瀵艰埅鏍忔牱寮�**/
 .navbar-style{
     background: rgba(10, 10, 10, 0.4);
     margin-bottom: 0 !important;
@@ -50,4 +50,12 @@ button.navbar-toggle > span.icon-bar {
 #footer .raw div{
     text-align: center;
     height:auto;
+}
+
+
+#callme{
+	position: fixed;
+	left:20px;
+	bottom: 50px;
+	width: 60px;
 }

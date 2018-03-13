@@ -1,7 +1,7 @@
 function updateCommodities () {
                 var categoryId=$($("#choice-category")).children('option:selected').val();
                 $.ajax({
-                    url : "http://localhost:8080/SHOP/api/queryCommodityByCategoryId?categoryId="+categoryId,
+                    url : "../api/queryCommodityByCategoryId?categoryId="+categoryId,
                     success : function(data) {
                         $(".container").html("");
                         var json = JSON.parse(data);
@@ -37,7 +37,7 @@ $(document).ready(function() {
 			 * 获得商品类别
 			 */
 			$.ajax({
-				url : "http://localhost:8080/SHOP/api/queryAllCategory",
+				url : "../api/queryAllCategory",
 				success : function(data) {
 					var json = JSON.parse(data);
 					for (var i = 0; i < json.length; i++) {
@@ -62,7 +62,7 @@ $(document).ready(function() {
                     var e=$(this);
                     var id=e.attr("data-index");
                     $.ajax({
-                            url: "http://localhost:8080/SHOP/api/deleteCommodityById?id=" + id,
+                            url: "../api/deleteCommodityById?id=" + id,
                             success: function () {
                                 updateCommodities();
                             }

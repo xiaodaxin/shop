@@ -10,8 +10,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.alibaba.fastjson.JSON;
-
 import top.gisgo.shop.dao.CategoryDaoImpl;
 import top.gisgo.shop.dao.CommodityDaoImpl;
 import top.gisgo.shop.dao.StoreDaoImpl;
@@ -26,7 +24,6 @@ public class IndexPageController {
 	CategoryDaoImpl categoryDaoImpl = (CategoryDaoImpl) context.getBean("categoryDaoImpl");
 	StoreDaoImpl storeDaoImpl=(StoreDaoImpl) context.getBean("storeDaoImpl");
 	CommodityDaoImpl commodityDaoImpl = (CommodityDaoImpl) context.getBean("commodityDaoImpl");
-
 	
 	@RequestMapping("/home")
 	public ModelAndView index(HttpSession httpSession) {

@@ -55,7 +55,12 @@ public class CategoryController {
                 e.printStackTrace();
             }
         }
-        category.setImgUrl("http://localhost:8080/imgs/category/"+imgname);
+        
+        
+        StringBuffer url = request.getRequestURL();  
+        String tempContextUrl = url.delete(url.length() - request.getRequestURI().length(), url.length()).append("/").toString();  
+        
+        category.setImgUrl(tempContextUrl+"imgs/category/"+imgname);
 		boolean boo = categoryDaoImpl.add(category);
 		System.out.println("添加分类是否成功："+boo);
 		return "redirect:../admin/category.html";

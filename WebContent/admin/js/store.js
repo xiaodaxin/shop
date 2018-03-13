@@ -1,6 +1,6 @@
 
 $.ajax({
-    url:"http://localhost:8080/SHOP/api/queryStore",
+    url:"../api/queryStore",
     type:"post",
     success:function (data) {
         var json=JSON.parse(data);

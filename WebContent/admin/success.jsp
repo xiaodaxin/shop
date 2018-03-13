@@ -30,7 +30,7 @@
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.0.js"></script>
 <script>
 $(document).ready(function(){
-		$.get("http://localhost:8080/SHOP/admin/queryAllCategory",function(data,status){
+		$.get("PATH/admin/queryAllCategory",function(data,status){
 			var jsons=JSON.parse(data);
 			for(var i=0;i<jsons.length;i++){
 				 $("select").append("<option value='"+jsons[i].id+"'>"+jsons[i].name+"</option>");

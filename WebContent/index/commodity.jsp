@@ -23,18 +23,6 @@
 		</div>
 
 	</c:forEach>
-
-
-	<!--<div class="card">-->
-	<!--<img class="card-img" src="http://static.runoob.com/images/mix/img_avatar.png" alt="Card image">-->
-	<!--<div class="card-body">-->
-	<!--<span id="name" class="label label-primary">超級大大燈</span>&nbsp;&nbsp;&nbsp;&nbsp;-->
-	<!--<span id="money" class="label label-danger">999元</span>&nbsp;&nbsp;&nbsp;&nbsp;-->
-	<!--<span id="category" class="label label-info">燈具</span>-->
-	<!--</div>-->
-	<!--<div class="delete">-->
-	<!--<span class="glyphicon glyphicon-remove"></span>-->
-	<!--</div>-->
 </div>
 
 

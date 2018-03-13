@@ -12,13 +12,21 @@
 
 }
 
-.text{
-    position: absolute;
-    bottom: 50px;
-    left: 20px;
-    right: 20px;
+.category-text{
     text-align: center;
-    color: honeydew;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom: 20px;
 }
-
+.category-text hr{
+	border-color:black;
+    margin-top: 2px;
+    margin-bottom: 5px;
+}
+.category-text-name{
+	font-family: YouYuan ;
+}
+.category-text-description{
+	font-family: YouYuan ;
+	color:#6E6E6EE;
 }

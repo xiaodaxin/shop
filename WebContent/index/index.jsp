@@ -12,6 +12,11 @@
      	<div class="category" style="background:url(<c:out value='${category.imgUrl}'/> )">
             
         </div>
+        <div class="category-text">
+        	<font class="category-text-name"><strong><c:out value='${category.name}'/></strong></font><hr>
+        	<font class="category-text-description"><c:out value='${category.description}'/></font>
+        </div>
+        <hr>
      	
      	</c:forEach>
         

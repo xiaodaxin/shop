@@ -2,6 +2,13 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" 
            uri="http://java.sun.com/jsp/jstl/core" %>
+           
+           
+           
+           
+           
+<a href="tel:<c:out value='${store.phone }'/>"><img id="callme" src="${pageContext.request.contextPath}/index/img/phone.png"></a>           
+           
 <div id="footer" class="container">
         <div class="raw">
             <div class="col-xs-12 col-md-6">

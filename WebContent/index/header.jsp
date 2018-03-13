@@ -9,8 +9,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>${store.title}</title>
-    <link rel="icon" href="${pageContext.request.contextPath}/index/img/favicon.ico" type="image/x-icon" />
-    <link rel="shortcut icon" href="${pageContext.request.contextPath}/index/img/favicon.ico" type="image/x-icon" />
     <meta name="description" content="家中如果拥有合适的照明，不仅能为实际工作照明，更能让人感觉舒适" />
     <link rel="stylesheet" href="${pageContext.request.contextPath}/index/plugins/bootstrap/css/bootstrap.min.css">
     <script src="${pageContext.request.contextPath}/index/plugins/jquery-3.2.1.min.js"></script>
@@ -19,6 +17,11 @@
     <script src="${pageContext.request.contextPath}/index/js/main.js"></script>
     </head>
     <body>
+    
+    <!-- 微信分享图片-->
+    <div style ='margin:0 auto;width:0px;height:0px;overflow:hidden; ' >
+	<img src='${pageContext.request.contextPath}/index/img/share.jpg' >
+	</div>
 
     <!-- 导航栏 -->
     <nav id="nav" class="navbar navbar-static-top navbar-style" role="navigation">

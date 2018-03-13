@@ -61,9 +61,13 @@ public class CommodityController {
                 e.printStackTrace();
             }
         }
-        commodity.setImgUrl("http://localhost:8080/imgs/commodity/"+imgname);
+        
+        StringBuffer url = request.getRequestURL();  
+        String tempContextUrl = url.delete(url.length() - request.getRequestURI().length(), url.length()).append("/").toString();  
+        
+        commodity.setImgUrl(tempContextUrl+"imgs/commodity/"+imgname);
         commodityDaoImpl.addCommodity(commodity);
-        return "redirect:../admin/add.html";		
+        return "redirect:../admin/commodity.html";		
 	}
 	
 	/*

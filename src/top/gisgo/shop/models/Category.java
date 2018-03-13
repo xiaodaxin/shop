@@ -4,6 +4,7 @@ public class Category {
 	int id;
 	String name;
 	String imgUrl;
+	String description;
 	
 	public int getId() {
 		return id;
@@ -22,6 +23,16 @@ public class Category {
 	}
 	public void setImgUrl(String imgUrl) {
 		this.imgUrl = imgUrl;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	@Override
+	public String toString() {
+		return "Category [id=" + id + ", name=" + name + ", imgUrl=" + imgUrl + ", description=" + description + "]";
 	}
 
 	
