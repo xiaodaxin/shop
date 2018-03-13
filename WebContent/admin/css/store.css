@@ -35,8 +35,8 @@ html,body{
     font-size: 30px;
 }
 #store .form-group{
-    margin-right: 0!important;
-    margin-left: 0!important;
+   
+    margin-top:10px;
 }
 
 #message{

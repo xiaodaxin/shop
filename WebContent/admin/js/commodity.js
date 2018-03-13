@@ -7,7 +7,7 @@ function updateCommodities () {
                         var json = JSON.parse(data);
                         for (var i = 0; i < json.length; i++) {
                       
-                            var context='<div class="card" >'
+                            var context='<div class="card col-xs-12 col-sm-6 col-md-4" >'
                                + '<img class="card-img" src="'
                             +json[i].imgUrl
                                  +'">'

@@ -9,7 +9,7 @@
 <div class="container">
 
 	<c:forEach items="${commodities }" var="commodity">
-		<div class="card">
+		<div class="card col-xs-12 col-sm-6 col-md-4">
 			<img class="card-img" src="<c:out value='${commodity.imgUrl}'/>"
 				alt="Card image">
 			<div class="card-body">
@@ -24,7 +24,5 @@
 
 	</c:forEach>
 </div>
-
-
 
 <%@include file="footer.jsp"%>

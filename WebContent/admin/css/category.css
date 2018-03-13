@@ -39,7 +39,6 @@ html,body{
 .card{
     position: relative;
     margin-top: 15px;
-    width: 100%;
 }
 .card-img{
     width: 100%;
