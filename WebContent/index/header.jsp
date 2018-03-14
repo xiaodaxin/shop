@@ -44,7 +44,11 @@
                         <a href="${pageContext.request.contextPath}/api/queryCommodityModelByCategoryId?categoryId=<c:out value='${category.id}'/>"><c:out value="${category.name}" /></a>
                     </li>
                 	
-                </c:forEach>
+                </c:forEach> 
+                
+                <li>
+                	<a href="${pageContext.request.contextPath}/index/about.jsp">了解我们</a>
+                </li>
                 </ul>
             </div>
         </div>

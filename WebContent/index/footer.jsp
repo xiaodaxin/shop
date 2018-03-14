@@ -7,7 +7,7 @@
            
            
            
-<a href="tel:<c:out value='${store.phone }'/>"><img id="callme" src="${pageContext.request.contextPath}/index/img/phone.png"></a>           
+<a id="callme" href="tel:<c:out value='${store.phone }'/>"><img  src="${pageContext.request.contextPath}/index/img/phone.png"></a>           
            
 <div id="footer" class="container">
         <div class="raw">
@@ -22,9 +22,13 @@
                     <span class="glyphicon glyphicon-tag"></span>：</strong><c:out value='${store.address }'/>
             </div>
             
-            <div class="col-xs-12 col-md-6">
+			 <div id="gis" class="col-xs-12 col-md-12">
+               <br>
+            </div>
+            
+            <div id="gis" class="col-xs-12 col-md-12">
                 <strong>
-                   	技术支持：</strong>肖大昕（13667084900）
+                   	技术支持：</strong>肖大昕(13667084900)
             </div>
 
         </div>

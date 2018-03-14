@@ -32,8 +32,7 @@ button.navbar-toggle > span.icon-bar {
 
 #footer{
 	margin-top:20px;
-    padding-top:20px;
-    padding-bottom: 20px;
+	padding-top20px;
     width: 100%;
     background: #0f0503;
     height: auto;
@@ -52,10 +51,23 @@ button.navbar-toggle > span.icon-bar {
     height:auto;
 }
 
+#gis{
+	font-size:12px;
+}
 
 #callme{
 	position: fixed;
 	left:20px;
 	bottom: 50px;
 	width: 60px;
+}
+#callme img{
+	width:100%;
+}
+
+
+@media screen and (min-width: 767px) {
+	#callme{
+	display:none;
+}
 }

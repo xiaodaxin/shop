@@ -44,7 +44,17 @@ public class CategoryController {
 //      鍒涘缓鐩爣鏂囦欢锛屽埗瀹氭枃浠跺瓨鍌ㄨ矾寰勫拰鏂囦欢鍚�
         
         String p=new File(path).getParent()+"\\imgs\\category\\";
-        System.out.println(p);
+        
+        File f=new File(p);
+        if(f.exists()) {
+        	System.out.println("OK");
+        }else {
+        	System.out.println("dir not exists, create it ...");
+        	f.mkdir();
+        }
+        
+
+        
         File targetFile = new File(p+imgname);
         
         if(fileName!=null&&fileName.length()>0){
