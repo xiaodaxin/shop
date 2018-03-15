@@ -32,6 +32,7 @@
 		// 初始化地图， 设置中心点坐标和地图级别
 		var marker = new BMap.Marker(point);        // 创建标注    
 		map.addOverlay(marker);                     // 将标注添加到地图中 	
+		map.disableDragging(); 
 	</script>
 	
 	<br>
@@ -50,7 +51,6 @@
 		<img alt="金牛管业" src="http://www.wuhankb.com/r/cms/jngy/default/images/logo.png">
 	</div>
 	
-
 </div>
 
 

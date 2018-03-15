@@ -46,12 +46,27 @@ public class CommodityDaoImpl implements CommodityDao {
 		@SuppressWarnings("rawtypes")
 		List<Commodity> lists= jdbcTemplateObject.query(sql,new BeanPropertyRowMapper(Commodity.class));
 		return lists;
+		
 	}
 
 	@Override
 	public Commodity queryCommodityById(int commodityId) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql="select * from commodity where id="+commodityId;
+		List<Commodity> lists= jdbcTemplateObject.query(sql,new BeanPropertyRowMapper(Commodity.class));
+		return lists.get(0);
+	}
+	
+	@Override
+	public void updateCommodity(Commodity commodity) {
+		System.out.println(commodity);
+		String sql="update commodity set name=?,description=?,money=? where id= ?";
+		int i=jdbcTemplateObject.update(sql,commodity.getName(),commodity.getDescription(),commodity.getMoney(),commodity.getId());
+
+		if(i>0) {
+			System.out.println("update success!!");
+		}else {
+			System.out.println("update fail!!");
+		}
 	}
 
 }

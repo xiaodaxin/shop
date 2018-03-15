@@ -10,4 +10,5 @@ public interface CommodityDao {
 	public void deleteCommodityById(int id);
 	public List<Commodity> queryCommodityByCategoryId(int categoryId);
 	public Commodity queryCommodityById(int commodityId);
+	public void updateCommodity(Commodity commodity);
 }

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.View;
 
 import com.alibaba.fastjson.JSON;
 
@@ -101,7 +103,21 @@ public class CommodityController {
 		response.getWriter().write(json);
 	}
 	
+	@RequestMapping("/queryCommodityById")
+	public ModelAndView queryCommodityById(int commodityId,HttpServletResponse response) throws IOException {
+		Commodity commodity=commodityDaoImpl.queryCommodityById(commodityId);
+		
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("admin/updateCommodity");
+		mv.addObject("commodity", commodity);
+		return mv;
+	}
 	
-	
+	@RequestMapping("/updateCommodity")
+	public String updateCommodity(@ModelAttribute Commodity commodity) {
+		commodityDaoImpl.updateCommodity(commodity);
+		
+		return "redirect:../admin/commodity.html";
+	}
 
 }

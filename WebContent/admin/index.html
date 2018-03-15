@@ -2,89 +2,91 @@
 <html lang="zh-cn">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>SHOP后台管理系统</title>
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
-    <script src="plugins/jquery-3.2.1.min.js"></script>
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>SHOP后台管理系统</title>
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+<script src="plugins/jquery-3.2.1.min.js"></script>
+<script src="plugins/bootstrap/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-    <!-- 图片轮播 -->
-    <div id="carousel" class="carousel slide">
-        <!-- 轮播（Carousel）指标 -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-            <li data-target="#carousel" data-slide-to="2"></li>
-        </ol>
-        <!-- 轮播（Carousel）项目 -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520680713902&di=0da0a83129b99cfd8b193a5958faa219&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01dd795853ac9aa8012060c82e1251.jpg"
-                    alt="First slide">
-            </div>
-            <div class="item">
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520680755208&di=7d83bca295064c473dc396a030b6ef35&imgtype=0&src=http%3A%2F%2Fwww.51pptmoban.com%2Fd%2Ffile%2F2015%2F03%2F20%2Fbf7ed4f04d7d00275fc9f2f0f6e19361.jpg"
-                    alt="Second slide">
-            </div>
-            <div class="item">
-                <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520680776863&di=48cf44b605625743dcbfaa3ff53976be&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0177645722017c32f875a399fb6613.jpg%402o.jpg"
-                    alt="Third slide">
-            </div>
-        </div>
-    </div>
+	<!-- 图片轮播 -->
+	<div id="carousel" class="carousel slide">
+		<!-- 轮播（Carousel）指标 -->
+		<ol class="carousel-indicators">
+			<li data-target="#carousel" data-slide-to="0" class="active"></li>
+			<li data-target="#carousel" data-slide-to="1"></li>
+			<li data-target="#carousel" data-slide-to="2"></li>
+		</ol>
+		<!-- 轮播（Carousel）项目 -->
+		<div class="carousel-inner">
+			<div class="item active">
+				<img
+					src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520680713902&di=0da0a83129b99cfd8b193a5958faa219&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01dd795853ac9aa8012060c82e1251.jpg"
+					alt="First slide">
+			</div>
+			<div class="item">
+				<img
+					src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520680755208&di=7d83bca295064c473dc396a030b6ef35&imgtype=0&src=http%3A%2F%2Fwww.51pptmoban.com%2Fd%2Ffile%2F2015%2F03%2F20%2Fbf7ed4f04d7d00275fc9f2f0f6e19361.jpg"
+					alt="Second slide">
+			</div>
+			<div class="item">
+				<img
+					src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520680776863&di=48cf44b605625743dcbfaa3ff53976be&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F0177645722017c32f875a399fb6613.jpg%402o.jpg"
+					alt="Third slide">
+			</div>
+		</div>
+	</div>
 
 
 
-    <div id="function-div" class="container">
+	<div id="function-div" class="container">
 
-        <div class="row">
+		<div class="row">
 
-            <a href="commodity.html" class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
-                <div style="background:peru" class="imgdiv">
-                    <span class="glyphicon glyphicon-shopping-cart"></span>
-                </div>
-                <div class="function-name">商品管理</div>
-            </a>
-            <a href="category.html" class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
-                <div style="background:seagreen" class="imgdiv">
-                    <span class="glyphicon glyphicon-th-large"></span>
-                </div>
-                <div class="function-name">分类管理</div>
-            </a>
-            <a href="store.html" class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
-                <div style="background:tomato" class="imgdiv">
-                    <span class="glyphicon glyphicon-user"></span>
-                </div>
-                <div class="function-name">商家信息</div>
-            </a>
-            <div class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
-                <div style="background:darkturquoise" class="imgdiv">
-                    <span class="glyphicon glyphicon-file"></span>
-                </div>
-                <div class="function-name">页面设置</div>
-            </div>
+			<a href="commodity.html"
+				class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
+				<div style="background: peru" class="imgdiv">
+					<span class="glyphicon glyphicon-shopping-cart"></span>
+				</div>
+				<div class="function-name">商品管理</div>
+			</a> <a href="category.html"
+				class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
+				<div style="background: seagreen" class="imgdiv">
+					<span class="glyphicon glyphicon-th-large"></span>
+				</div>
+				<div class="function-name">分类管理</div>
+			</a> <a href="store.html"
+				class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
+				<div style="background: tomato" class="imgdiv">
+					<span class="glyphicon glyphicon-user"></span>
+				</div>
+				<div class="function-name">商家信息</div>
+			</a> <a href="qrcode.jsp"
+				class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
+				<div style="background: plum" class="imgdiv">
+					<span class="glyphicon glyphicon-qrcode"></span>
+				</div>
+				<div class="function-name">二维码</div>
+			</a> <a href="../" class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
+				<div style="background: fuchsia" class="imgdiv">
+					<span class="glyphicon glyphicon-home"></span>
+				</div>
+				<div class="function-name">首页预览</div>
+			</a>
 
-            <div class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
-                <div style="background:plum" class="imgdiv">
-                    <span class="glyphicon glyphicon-qrcode"></span>
-                </div>
-                <div class="function-name">二维码</div>
-            </div>
-
-            <div class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
-                    <div style="background:fuchsia" class="imgdiv">
-                        <span class="glyphicon glyphicon-home"></span>
-                    </div>
-                    <div class="function-name">首页预览</div>
-                </div>
-        </div>
-    </div>
+			<div class="grid col-xs-4 col-sm-3 col-md-3 col-lg-3">
+				<div style="background: darkturquoise" class="imgdiv">
+					<span class="glyphicon glyphicon-file"></span>
+				</div>
+				<div class="function-name">页面设置</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

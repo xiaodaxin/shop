@@ -31,7 +31,7 @@ public class IndexPageController {
 		List<Category> categories=categoryDaoImpl.queryAll();
 		Store store=storeDaoImpl.queryStore();
 		ModelAndView mv=new ModelAndView();
-		mv.setViewName("index");
+		mv.setViewName("index/index");
 		mv.addObject("categories",categories);
 		httpSession.setAttribute("categories", categories);
 		mv.addObject("store",store);
@@ -44,7 +44,7 @@ public class IndexPageController {
 		List<Commodity> commodities=commodityDaoImpl.queryCommodityByCategoryId(categoryId);
 		Category category=categoryDaoImpl.queryById(categoryId);
 		ModelAndView mv=new ModelAndView();
-		mv.setViewName("commodity");
+		mv.setViewName("index/commodity");
 		mv.addObject("commodities",commodities);
 		mv.addObject("category",category);
 		return mv;

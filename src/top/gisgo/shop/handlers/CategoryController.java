@@ -53,8 +53,6 @@ public class CategoryController {
         	f.mkdir();
         }
         
-
-        
         File targetFile = new File(p+imgname);
         
         if(fileName!=null&&fileName.length()>0){

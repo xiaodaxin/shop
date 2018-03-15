@@ -25,26 +25,34 @@ function updateCommodities () {
                                 +'">'
                                 +'<span class="glyphicon glyphicon-remove"></span>'
                                 +'</div>'
+                                +'<a class="update" href="../api/queryCommodityById?commodityId='
+                                +json[i].id
+                                +'">'
+                                +'<span class="glyphicon glyphicon-edit"></span>'
+                                +'</a>'
                                 +'</div>'
                             $(".container").append(context);
                         }
                     }
                 });
+              
             }
 
-$(document).ready(function() {
+$(document).ready(function() {	
+	
 			/**
 			 * 获得商品类别
 			 */
 			$.ajax({
 				url : "../api/queryAllCategory",
 				success : function(data) {
-					var json = JSON.parse(data);
+					var json = JSON.parse(data); 
 					for (var i = 0; i < json.length; i++) {
 						$("#choice-category").append(
 								"<option value='" + json[i].id + "'>"
 										+ json[i].name + "</option>")
 					}
+					$("#choice-category").append("<option value='0'>全部</option>")
 					updateCommodities();
 				}
 			});
@@ -70,5 +78,5 @@ $(document).ready(function() {
                     )
                 }
                 else{}
-			})
+			});
 });
