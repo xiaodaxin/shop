@@ -1,4 +1,6 @@
 
+
+
 $(document).ready(function() {
     /**
      * 上传图片部分
@@ -21,10 +23,16 @@ $(document).ready(function() {
     $.ajax({
         url:"../api/queryAllCategory",
         success:function(data){
-            var json=JSON.parse(data);
-            for(var i=0;i<json.length;i++){
-                $("#categoryId").append("<option value='"+json[i].id+"'>"+json[i].name+"</option>")
-            }
+        	var json;
+			parseJSON(data).then(function(o){
+				json=o
+				for(var i=0;i<json.length;i++){
+	                $("#categoryId").append("<option value='"+json[i].id+"'>"+json[i].name+"</option>")
+	            }
+			}).catch(function(err){
+				window.location.href="../admin/login.jsp"
+			});
+            
         }});
     
     

@@ -10,6 +10,7 @@
 	href="${pageContext.request.contextPath}/admin/plugins/bootstrap/css/bootstrap.min.css">
 <script
 	src="${pageContext.request.contextPath}/admin/plugins/jquery-3.2.1.min.js"></script>
+	    <script src="${pageContext.request.contextPath}/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
 <title>二维码</title>
 <style type="text/css">
 html, body {

@@ -3,12 +3,18 @@ $.ajax({
     url:"../api/queryStore",
     type:"post",
     success:function (data) {
-        var json=JSON.parse(data);
-        $("#storetitle").val(json.title);
-        $("#phone").val(json.phone);
-        $("#description").val(json.description);
-        $("#boss").val(json.boss);
-        $("#address").val(json.address);
+    	var json;
+		parseJSON(data).then(function(o){
+			json=o;
+			$("#storetitle").val(json.title);
+	        $("#phone").val(json.phone);
+	        $("#description").val(json.description);
+	        $("#boss").val(json.boss);
+	        $("#address").val(json.address);
+		}).catch(function(err){
+			window.location.href="../admin/login.jsp"
+		});
+        
     }
 });
 

@@ -29,5 +29,24 @@
         <property name="maxUploadSize" value="1024000000"/>
         <property name="defaultEncoding" value="UTF-8"/>
     </bean>
+    
+    
+    
+    
+    <mvc:interceptors>  
+        <!-- 检查用户权限，对于部分不需要权限的路径进行排除 -->  
+        <mvc:interceptor>  
+            <!-- 先匹配所有路径，然后排除不需要检查的路径 -->  
+            <mvc:mapping path="/**" />  
+            <!-- 与登录相关的请求 -->  
+            <mvc:exclude-mapping path="/login" />  
+            <mvc:exclude-mapping path="/home" />  
+            <mvc:exclude-mapping path="/queryCommodityModelByCategoryId" />  
+            <!-- 以下是静态资源 -->  
+            <mvc:exclude-mapping path="../admin/login.jsp" />  
+            <!-- 用户是否已经登录的检查 -->  
+            <bean id="loginInterceptor" class="top.gisgo.shop.interceptor.LoginInterceptor"></bean>  
+        </mvc:interceptor>  
+    </mvc:interceptors> 
 
 </beans>
